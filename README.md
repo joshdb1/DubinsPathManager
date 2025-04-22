@@ -9,16 +9,41 @@ To see derivations and more information on this project, please see ```DubinsPat
 A video of the simulation is also included in ```dubins_path_sim.avi```.
 
 
-<h2>Installation</h2>
-To run this simulation, you must have Python3.10+ installed and install the dependencies, including MavSim. Creating a virtual environment is recommended.
+## Creating and activating the mav_venv Python virtual environment
 
-If make is installed, you can run ```make install``` 
-Otherwise, run ```pip install -r requirements.txt```
+These instructions assume the python virtual environment is located at the same level as the `mav_sim` folder and is named `mav_venv`, so make sure you are in the `mav_sim_python` directory.
 
-<h2>Running</h2>
-To run the Dubin's path simulation, run ```python dubins_path_sim.py```
-This should bring up two MavSim windows showing the aircraft's position on the path and control states.
+To create the virtual environment, type the following command:
 
-<h2>MavSim Documentation</h2>
+```
+python -m venv mav_venv
+```
+You may need to replace `python` with `python3` or `python3.10`.
 
-For documentation on the python simulation, see [mavsim_python/README.md](mavsim_python/README.md)
+Now activate the virtual environment with the following command.
+
+```
+Windows:
+mav_venv\Scripts\activate
+
+Ubuntu:
+source mav_venv/bin/activate
+```
+
+## Installing the `mav_sim` package
+
+To install the `mav_sim` package, make sure you are in the `mav_sim_python` directory use the following command:
+```
+pip install -e .
+```
+Wait a few minutes for the installation to complete.
+
+## Running the Full Dubin's Path Manager
+
+The Dubin's Path Manager test is located in `dubins_path_sim.py`. To run it, simply run the command:
+
+```
+python .\dubins_path_sim.py
+```
+
+The simulation window will pop up and the aircraft will begin flying the path specified.
